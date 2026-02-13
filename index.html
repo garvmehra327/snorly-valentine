@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Snorly ❤️</title>
+
+<style>
+
+body {
+    margin: 0;
+    background: black;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: fixed;
+    inset: 0;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    color: white;
+}
+
+.top h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.top h2 {
+    margin: 5px 0 0;
+}
+
+.bottom {
+    text-align: center;
+}
+
+.bottom h1 {
+    font-size: 26px;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    background: white;
+    color: #ff4d6d;
+}
+
+#yesBtn:hover {
+    background: #ff6f91;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="slideshow">
+
+    <!-- YOUR IMAGES (KEEP AS BEFORE) -->
+
+    <div class="slide active" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.36 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.37 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.37 PM (1).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.37 PM (2).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.38 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.38 PM (1).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.38 PM (2).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.39 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.47.39 PM (1).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.12 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.12 PM (1).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.13 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.13 PM (1).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.13 PM (2).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.14 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.14 PM (1).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.14 PM (2).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.15 PM.jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.15 PM (1).jpeg')"></div>
+    <div class="slide" style="background-image:url('WhatsApp Image 2026-02-13 at 9.49.16 PM (1).jpeg')"></div>
+
+    <div class="overlay">
+
+        <div class="top">
+            <h1>Happy Valentine’s Day 💖</h1>
+            <h2>To My Snorly ❤️</h2>
+        </div>
+
+        <div class="bottom">
+
+            <h1>Will you be my Valentine? 💘</h1>
+
+            <div class="buttons">
+                <button id="yesBtn" onclick="goLove()">YES ❤️</button>
+                <button id="noBtn" onclick="shrinkNo()">NO 💔</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(()=>{
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+},3500);
+
+
+// NO button shrinking
+let noSize = 18;
+
+function shrinkNo(){
+    noSize -= 3;
+
+    const noBtn = document.getElementById("noBtn");
+
+    if(noSize <= 0){
+        noBtn.style.display = "none";
+    }else{
+        noBtn.style.fontSize = noSize + "px";
+        noBtn.style.padding = (noSize/2) + "px " + (noSize) + "px";
+    }
+}
+
+
+// YES → Go to Love Page
+function goLove(){
+    window.location.href = "love.html";
+}
+
+</script>
+
+</body>
+</html>

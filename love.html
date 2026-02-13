@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I Love You ❤️</title>
+
+<style>
+
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #ff4d6d, #ff85a2);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+.box {
+    background: rgba(255,255,255,0.15);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 90%;
+    animation: zoom 1.2s ease;
+}
+
+@keyframes zoom {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 22px;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.8);
+    font-size: 24px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>I Love You Snorly ❤️💍</h1>
+
+    <p>
+        I love you Snorly, and I think whatever happens,
+        wherever we go, I will always love you
+        for the rest of my life. 💕
+    </p>
+
+    <p>
+        I like every small thing about you —
+        your smile, your hair, your “mardo waley haath”,
+        everything about you. 🥰
+    </p>
+
+    <p>
+        And as some great intelligent person once said
+        (I think it was you 😄),
+        “Beauty lies in the eyes of the beholder.”
+    </p>
+
+    <p>
+        So in my eyes…
+    </p>
+
+    <p style="font-size: 20px; font-weight: bold;">
+        You are not 6/10,
+        you are
+        <br><br>
+        💖 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 💖
+    </p>
+
+</div>
+
+
+<script>
+
+// Heart animation
+setInterval(()=>{
+
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+
+},300);
+
+</script>
+
+</body>
+</html>
